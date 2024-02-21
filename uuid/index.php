@@ -11,7 +11,6 @@ $uuid = Uuid::uuid4();
     <title>UUID</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="one UUID, one request">
-    <meta name="author" content="Rick van der Wolk">
     <style>
         html,
         body {
