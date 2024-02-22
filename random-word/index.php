@@ -1,10 +1,10 @@
+<?php require_once '../helpers.php';  ?>
+
+<?php setHeaders(); ?>
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Grrrandom word</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="one word, one request">
+    <?php renderHeadBase('random word'); ?>
     <style>
         html,
         body {

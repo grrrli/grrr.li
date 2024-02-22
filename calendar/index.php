@@ -1,14 +1,15 @@
 <?php
+require_once '../helpers.php';
 $year = isset($_GET['year']) ? intval($_GET['year']) : date('Y');
 $months = [1 => 'Januari', 2 => 'Februari', 3 => 'Maart', 4 => 'April', 5 => 'Mei', 6 => 'Juni', 7 => 'Juli', 8 => 'Augustus', 9 => 'September', 10 => 'Oktober', 11 => 'November', 12 => 'December'];
 $daysOfWeek = ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo'];
 ?>
 
+<?php setHeaders(); ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <?php renderHeadBaseBase('calendar'); ?>
     <style>
         body {
             font-family: Arial, Verdana;

@@ -1,10 +1,10 @@
+<?php require_once 'helpers.php';  ?>
+
+<?php setHeaders(); ?>
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Grrr.li</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Grrr.li">
+    <?php renderHeadBase('Grrr.li'); ?>
     <style>
         html,
         body {

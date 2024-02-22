@@ -1,16 +1,15 @@
 <?php
 require_once 'vendor/autoload.php';
+require_once '../helpers.php';
 use Ramsey\Uuid\Uuid;
 $uuid = Uuid::uuid4();
 ?>
 
+<?php setHeaders(); ?>
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>UUID</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="one UUID, one request">
+    <?php renderHeadBase('uuid'); ?>
     <style>
         html,
         body {
