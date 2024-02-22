@@ -7,7 +7,7 @@ function setHeaders(): void
     header('Content-Type: text/html; charset=UTF-8');
     header('Cross-Origin-Opener-Policy: same-origin');
     header("Permissions-Policy: geolocation=(), microphone=(), camera=()");
-    header('Referrer-Policy: no-referrer-when-downgrade');
+    header('Referrer-Policy: no-referrer');
     header('Strict-Transport-Security: max-age=31536000; includeSubDomains');
     header('X-Content-Type-Options: nosniff');
     header('X-Frame-Options: DENY');
