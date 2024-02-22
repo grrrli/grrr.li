@@ -9,7 +9,7 @@ $daysOfWeek = ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo'];
 <!DOCTYPE html>
 <html>
 <head>
-    <?php renderHeadBaseBase('calendar'); ?>
+    <?php renderHeadBase('calendar'); ?>
     <style>
         body {
             font-family: Arial, Verdana;
