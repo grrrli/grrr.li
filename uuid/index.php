@@ -26,6 +26,9 @@ $uuid = Uuid::uuid4();
             font-size: 4em;
             margin: 15px;
         }
+        h1:active {
+            opacity: 0.5;
+        }
         #uuid-wrapper {
             margin-left: auto;
             margin-right: auto;
@@ -52,7 +55,9 @@ $uuid = Uuid::uuid4();
 </head>
 <body>
 <div id="uuid-wrapper">
-    <h1><?php echo $uuid; ?></h1>
+    <h1 onclick="navigator.clipboard.writeText('<?php echo $uuid; ?>');">
+        <?php echo $uuid; ?>
+    </h1>
 </div>
 </body>
 </html>
