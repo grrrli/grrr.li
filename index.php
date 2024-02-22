@@ -10,6 +10,14 @@
         body {
             background: white;
             color: black;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+        a {
+            display: block;
+            padding: 20px;
         }
         @media (prefers-color-scheme: dark) {
             html,
@@ -22,11 +30,9 @@
 </head>
 <body>
 <h1>Grrr.li</h1>
-<ul>
-    <li><a href="/calendar">calendar</a>
-    <li><a href="/emojis">emojis</a>
-    <li><a href="/random-word">random word</a>
-    <li><a href="/uuid">uuid</a>
-</ul>
+<a href="/calendar">calendar</a>
+<a href="/emojis">emojis</a>
+<a href="/random-word">random word</a>
+<a href="/uuid">uuid</a>
 </body>
 </html>
