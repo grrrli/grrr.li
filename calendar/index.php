@@ -6,8 +6,8 @@ $daysOfWeek = ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo'];
 ?>
 
 <?php setHeaders(); ?>
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="nl">
 <head>
     <?php renderHeadBase('calendar'); ?>
     <style>
