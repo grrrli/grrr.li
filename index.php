@@ -30,11 +30,11 @@
 </head>
 <body>
 <h1>Grrr.li</h1>
-<a href="/calendar">Calendar</a>
-<a href="/clock">Clock</a>
-<a href="/emojis">Emojis</a>
-<a href="/random-word">Random word</a>
-<a href="/uuid">UUID</a>
+<a href="/calendar/">Calendar</a>
+<a href="/clock/">Clock</a>
+<a href="/emojis/">Emojis</a>
+<a href="/random-word/">Random word</a>
+<a href="/uuid/">UUID</a>
 <br>
 <a
     href="https://github.com/grrrli/grrr.li"
