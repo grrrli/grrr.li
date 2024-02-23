@@ -31,6 +31,7 @@
 <body>
 <h1>Grrr.li</h1>
 <a href="/calendar">calendar</a>
+<a href="/clock">clock</a>
 <a href="/emojis">emojis</a>
 <a href="/random-word">random word</a>
 <a href="/uuid">uuid</a>
