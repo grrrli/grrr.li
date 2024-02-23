@@ -1,4 +1,4 @@
-<?php require_once 'helpers.php';  ?>
+<?php require_once '../helpers.php';  ?>
 
 <?php setHeaders(); ?>
 <!doctype html>
@@ -30,13 +30,19 @@
 </head>
 <body>
 <h1>Grrr.li</h1>
-<a href="/calendar/">Calendar</a>
-<a href="/clock/">Clock</a>
-<a href="/emojis/">Emojis</a>
-<a href="/random-word/">Random word</a>
-<a href="/uuid/">UUID</a>
-<br>
-<br>
-<a href="/about/">About</a>
+<h3>About</h3>
+<p>Born out of frustration, build with love.</p>
+<p>
+    My PC's fan shouldn't turn on when viewing a simple calendar, clock or random word website.
+    <br>
+    Such a page shouldn't need hundreds and hundreds of requests and multiple MB's of resources.
+</p>
+<p>Build for personal use but feel free to use it as well.</p>
+<a href="/">Back to homepage</a>
+<a
+    href="https://github.com/grrrli/grrr.li"
+    rel="noopener noreferrer nofollow"
+    target="_blank"
+>View on GitHub</a>
 </body>
 </html>
