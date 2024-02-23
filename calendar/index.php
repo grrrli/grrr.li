@@ -9,7 +9,7 @@ $daysOfWeek = ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo'];
 <!doctype html>
 <html lang="nl">
 <head>
-    <?php renderHeadBase('calendar ' . $year); ?>
+    <?php renderHeadBase('Calendar ' . $year); ?>
     <style>
         body {
             font-family: Arial, Verdana;

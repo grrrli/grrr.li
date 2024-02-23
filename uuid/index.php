@@ -9,7 +9,7 @@ $uuid = Uuid::uuid4();
 <!doctype html>
 <html lang="en">
 <head>
-    <?php renderHeadBase('uuid'); ?>
+    <?php renderHeadBase('UUID'); ?>
     <style>
         html,
         body {

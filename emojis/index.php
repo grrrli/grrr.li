@@ -4,7 +4,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <?php renderHeadBase('emojis'); ?>
+    <?php renderHeadBase('Emojis'); ?>
     <style>
         html,
         body {

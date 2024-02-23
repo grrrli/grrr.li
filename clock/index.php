@@ -4,7 +4,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <?php renderHeadBase('clock'); ?>
+    <?php renderHeadBase('Clock'); ?>
     <style>
         html,
         body {

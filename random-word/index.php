@@ -4,7 +4,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <?php renderHeadBase('random word'); ?>
+    <?php renderHeadBase('Random word'); ?>
     <style>
         html,
         body {
