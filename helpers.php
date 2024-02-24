@@ -7,7 +7,7 @@ function setHeaders(): void
     $cacheExpirationDate = gmdate('D, d M Y H:i:s', time() + $cacheMaxAge) . ' GMT';
     header('Access-Control-Allow-Origin: https://grrr.li');
     header("Cache-Control: public, max-age=$cacheMaxAge");
-    header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://grrr.li; style-src 'self' 'unsafe-inline'; object-src 'none';");
+    header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://grrr.li; style-src 'self'; object-src 'none';");
     header('Content-Type: text/html; charset=UTF-8');
     header('Cross-Origin-Opener-Policy: same-origin');
     header("Expires: $cacheExpirationDate");

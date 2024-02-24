@@ -3,6 +3,10 @@ body {
     font-family: 'Times New Roman', Times, serif;
     background: white;
     color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 a.button {
@@ -33,6 +37,10 @@ a.button:active {
     background-color: white;
     box-shadow: 0 5px #222;
     transform: translateY(2px);
+}
+
+img.logo {
+    margin-top: 15px;
 }
 
 @media (prefers-color-scheme: dark) {

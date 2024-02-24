@@ -5,19 +5,13 @@
 <html lang="en">
 <head>
     <?php renderHeadBase('Grrr.li'); ?>
-    <style>
-        html,
-        body {
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-        }
-    </style>
 </head>
 <body>
-<img src="/favicon.ico">
+<img
+        src="/favicon.ico"
+        class="logo"
+        alt="Logo"
+>
 <h1>Grrr.li</h1>
 <h2>About</h2>
 <p>Born out of frustration, build with love.</p>

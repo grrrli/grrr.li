@@ -59,7 +59,7 @@ function buildCalendar($year, $months, $daysOfWeek)
         $dayOfWeek = $dateComponents['wday'];
         $dayOfWeek = ($dayOfWeek - 1 + 7) % 7;
         $weekNumber = date('W', $firstDayOfMonth);
-        ?><h2 style='font-size: 20px; text-align: center;'><?php echo $month . ' ' . $year; ?></h2>
+        ?><h2><?php echo $month . ' ' . $year; ?></h2>
         <table>
             <tr>
                 <th>Wk</th>

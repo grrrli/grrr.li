@@ -1,17 +1,7 @@
-
-body {
-    padding: 20px 20px 40px;
-}
-
 .calendar-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.month {
-    max-width: 300px;
-    margin: 10px;
 }
 
 table {
@@ -23,6 +13,16 @@ table {
 th, td {
     padding: 8px;
     border: 1px solid #ccc;
+    text-align: center;
+}
+
+div.month {
+    max-width: 300px;
+    margin: 10px;
+}
+
+div.month h2 {
+    font-size: 20px;
     text-align: center;
 }
 
@@ -54,11 +54,6 @@ td.week-number {
 }
 
 @media (prefers-color-scheme: light) {
-    body {
-        background-color: #fff;
-        color: #000;
-    }
-
     th {
         background-color: #eee;
         color: #000;
@@ -66,7 +61,7 @@ td.week-number {
 }
 
 @media (min-width: 600px) {
-    .month {
+    div.month {
         max-width: none;
     }
 }
