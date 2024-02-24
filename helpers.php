@@ -19,11 +19,15 @@ function renderHeadBase(
     string $title
 ): void {
     ob_start();
-    ?><meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    ?><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="<?php echo $title ; ?>" />
-    <meta property="og:image" content="https://grrr.li/android-chrome-192x192.png" />
-    <link rel="apple-touch-icon" href="https://grrr.li/apple-touch-icon.png" />
+    <meta property="og:image" content="/android-chrome-192x192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" sizes="48x48" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/favicon.ico" color="#FFFFFF" />
     <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="/assets/main.css"><?php
     $head = ob_get_clean();
