@@ -21,6 +21,8 @@ function renderHeadBase(
     ob_start();
     ?><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="<?php echo $title ; ?>" />
+    <meta property="og:image" content="https://grrr.li/android-chrome-192x192.png" />
     <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="/assets/main.css"><?php
     $head = ob_get_clean();
