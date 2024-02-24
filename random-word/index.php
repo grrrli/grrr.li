@@ -14,14 +14,15 @@
         $randomWord = $words[array_rand($words)];
     ?>
     <div id="random-word-wrapper">
-        <h1><?php echo $randomWord; ?></h1>
+        <h1 onclick="navigator.clipboard.writeText('<?php echo $randomWord; ?>');">
+            <?php echo $randomWord; ?>
+        </h1>
     </div>
     <script>
         function reloadPage() {
             location.reload();
         }
 
-        document.body.addEventListener('click', reloadPage);
         document.body.onkeyup = function(e) {
             if (
                 e.key === ' '
