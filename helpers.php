@@ -23,6 +23,7 @@ function renderHeadBase(
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="<?php echo $title ; ?>" />
     <meta property="og:image" content="https://grrr.li/android-chrome-192x192.png" />
+    <link rel="apple-touch-icon" href="https://grrr.li/apple-touch-icon.png" />
     <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="/assets/main.css"><?php
     $head = ob_get_clean();
