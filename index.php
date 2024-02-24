@@ -27,6 +27,10 @@
         class="button"
 >Emojis</a>
 <a
+        href="/moon-phase/"
+        class="button"
+>Moon phase</a>
+<a
         href="/random-word/"
         class="button"
 >Random word</a>
