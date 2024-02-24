@@ -35,6 +35,10 @@
         class="button"
 >Random word</a>
 <a
+        href="/resize-image/"
+        class="button"
+>Resize image</a>
+<a
         href="/uuid/"
         class="button"
 >UUID</a>

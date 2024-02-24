@@ -9,7 +9,7 @@ body {
     justify-content: center;
 }
 
-a.button {
+.button {
     display: inline-block;
     width: 100%;
     max-width: 255px;
@@ -28,12 +28,12 @@ a.button {
     font-weight: bold;
 }
 
-a.button:hover,
-a.button:focus {
+.button:hover,
+.button:focus {
     background-color: white;
 }
 
-a.button:active {
+.button:active {
     background-color: white;
     box-shadow: 0 5px #222;
     transform: translateY(2px);
@@ -43,6 +43,15 @@ img.logo {
     margin-top: 15px;
 }
 
+.form-group input {
+    display: block;
+    width: calc(100% - 34px);
+    padding: 17px;
+    margin: 5px;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+
 @media (prefers-color-scheme: dark) {
     html,
     body {
@@ -50,19 +59,19 @@ img.logo {
         color: white;
     }
 
-    a.button {
+    .button {
         background-color: black;
         color: #fff;
         box-shadow: #fff 4px 4px 0 0;
         border-color: #fff;
     }
 
-    a.button:hover,
-    a.button:focus {
+    .button:hover,
+    .button:focus {
         background-color: #555;
     }
 
-    a.button:active {
+    .button:active {
         background-color: #555;
         box-shadow: 0 5px #fff;
         transform: translateY(2px);

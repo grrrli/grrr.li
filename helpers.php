@@ -1,5 +1,13 @@
 <?php
 
+setDefaults();
+
+function setDefaults()
+{
+    ini_set('display_errors', 0);
+    date_default_timezone_set('UTC');
+}
+
 function setHeaders(): void
 {
     $cachingPeriodInDays = 1;

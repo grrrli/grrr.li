@@ -1,8 +1,6 @@
 <?php
 require_once '../helpers.php';
 
-date_default_timezone_set('UTC');
-
 $year = isset($_GET['year']) ? intval($_GET['year']) : date('Y');
 $userLanguage = $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? 'en_US';
 $userLanguage = substr($userLanguage, 0, 2);
