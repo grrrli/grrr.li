@@ -39,115 +39,56 @@ for ($day = 1; $day <= 7; $day++) {
 <html lang="<?php echo $userLanguage; ?>">
 <head>
     <?php renderHeadBase('Calendar ' . $year); ?>
-    <style>
-        body {
-            font-family: Arial, Verdana;
-            padding: 20px 20px 40px;
-        }
-        .calendar-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .month {
-            max-width: 300px;
-            margin: 10px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border: 1px solid #ccc;
-        }
-        th, td {
-            padding: 8px;
-            border: 1px solid #ccc;
-            text-align: center;
-        }
-        td.current-day {
-            background-color: #ff6347;
-            color: #fff;
-        }
-        td.week-number {
-            background-color: #f0f0f0;
-            text-align: center;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #000;
-                color: #fff;
-            }
-            th {
-                background-color: #555;
-                color: #fff;
-            }
-            td.current-day {
-                background-color: #db7093;
-                color: #fff;
-            }
-            td.week-number {
-                background-color: #333;
-                color: #fff;
-            }
-        }
-
-        @media (prefers-color-scheme: light) {
-            body {
-                background-color: #fff;
-                color: #000;
-            }
-            th {
-                background-color: #eee;
-                color: #000;
-            }
-        }
-
-        @media (min-width: 600px) {
-            .month {
-                max-width: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/calendar/calendar.css">
 </head>
 <body>
 <?php
-function buildCalendar($year, $months, $daysOfWeek) {
+function buildCalendar($year, $months, $daysOfWeek)
+{
     $currentDate = date('Y-m-d');
-    ?><div class='calendar-container'><?php
+    ?>
+    <div class='calendar-container'><?php
     foreach ($months as $monthNum => $month) {
-        ?><div class='month'><?php
+        ?>
+        <div class='month'><?php
         $firstDayOfMonth = mktime(0, 0, 0, $monthNum, 1, $year);
         $numberDays = date('t', $firstDayOfMonth);
         $dateComponents = getdate($firstDayOfMonth);
         $dayOfWeek = $dateComponents['wday'];
         $dayOfWeek = ($dayOfWeek - 1 + 7) % 7;
         $weekNumber = date('W', $firstDayOfMonth);
-        ?><h2 style='font-size: 20px; text-align: center;'><?php echo $month . ' ' .  $year; ?></h2>
+        ?><h2 style='font-size: 20px; text-align: center;'><?php echo $month . ' ' . $year; ?></h2>
         <table>
             <tr>
                 <th>Wk</th>
                 <?php foreach ($daysOfWeek as $day) {
-                    ?><th><?php echo $day; ?></th><?php
+                    ?>
+                    <th><?php echo $day; ?></th><?php
                 }
-                ?> </tr><tr>
+                ?> </tr>
+            <tr>
                 <td class='week-number'><?php echo $weekNumber; ?></td><?php
 
                 if ($dayOfWeek > 0) {
-                    ?><td colspan='<?php echo $dayOfWeek; ?>'>&nbsp;</td><?php
+                    ?>
+                    <td colspan='<?php echo $dayOfWeek; ?>'>&nbsp;</td><?php
                 }
 
                 $currentDay = 1;
                 while ($currentDay <= $numberDays) {
                 if ($dayOfWeek == 7) {
                 $dayOfWeek = 0;
-                ?></tr><tr><?php
+                ?></tr>
+            <tr><?php
                 $weekNumber = date('W', mktime(0, 0, 0, $monthNum, $currentDay, $year));
-                ?><td class='week-number'><?php echo $weekNumber; ?></td><?php
+                ?>
+                <td class='week-number'><?php echo $weekNumber; ?></td><?php
                 }
 
                 $dateString = sprintf("%04d-%02d-%02d", $year, $monthNum, $currentDay);
                 $class = ($dateString === $currentDate) ? 'current-day' : '';
-                ?><td class="<?php echo $class; ?>"><?php echo $currentDay; ?></td><?php
+                ?>
+                <td class="<?php echo $class; ?>"><?php echo $currentDay; ?></td><?php
 
                 $currentDay++;
                 $dayOfWeek++;
@@ -155,7 +96,8 @@ function buildCalendar($year, $months, $daysOfWeek) {
 
                 if ($dayOfWeek != 7) {
                     $remainingDays = 7 - $dayOfWeek;
-                    ?><td colspan='<?php echo $remainingDays; ?>'>&nbsp;</td><?php
+                    ?>
+                    <td colspan='<?php echo $remainingDays; ?>'>&nbsp;</td><?php
                 }
                 ?></tr>
         </table>
@@ -165,18 +107,6 @@ function buildCalendar($year, $months, $daysOfWeek) {
 }
 
 buildCalendar($year, $months, $daysOfWeek);
-
 ?>
-
-<script>
-    console.group('URL parameters');
-    console.group('optional');
-    console.group('year');
-    console.log('default: current year');
-    console.log('example: ?year=2032');
-    console.groupEnd();
-    console.groupEnd();
-    console.groupEnd();
-</script>
 </body>
 </html>

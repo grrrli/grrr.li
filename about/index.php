@@ -1,4 +1,4 @@
-<?php require_once '../helpers.php';  ?>
+<?php require_once '../helpers.php'; ?>
 
 <?php setHeaders(); ?>
 <!doctype html>
@@ -8,29 +8,18 @@
     <style>
         html,
         body {
-            background: white;
-            color: black;
+            padding: 15px;
             display: flex;
             align-items: center;
             flex-direction: column;
             justify-content: center;
         }
-        a {
-            display: block;
-            padding: 20px;
-        }
-        @media (prefers-color-scheme: dark) {
-            html,
-            body {
-                background: black;
-                color: white;
-            }
-        }
     </style>
 </head>
 <body>
+<img src="/favicon.ico">
 <h1>Grrr.li</h1>
-<h3>About</h3>
+<h2>About</h2>
 <p>Born out of frustration, build with love.</p>
 <p>
     My PC's fan shouldn't turn on when viewing a simple calendar, clock or random word website.
@@ -38,11 +27,18 @@
     Such a page shouldn't need hundreds and hundreds of requests and multiple MB's of resources.
 </p>
 <p>Build for personal use but feel free to use it as well.</p>
-<a href="/">Back to homepage</a>
+<br>
 <a
-    href="https://github.com/grrrli/grrr.li"
-    rel="noopener noreferrer nofollow"
-    target="_blank"
+        href="/"
+        class="button"
+>Back to homepage</a>
+<br>
+<br>
+<a
+        href="https://github.com/grrrli/grrr.li"
+        rel="noopener noreferrer nofollow"
+        target="_blank"
+        class="button"
 >View on GitHub</a>
 </body>
 </html>

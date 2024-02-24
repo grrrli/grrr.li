@@ -8,35 +8,24 @@
     <style>
         html,
         body {
-            background: white;
-            color: black;
+            padding: 15px;
             display: flex;
             align-items: center;
             flex-direction: column;
             justify-content: center;
         }
-        a {
-            display: block;
-            padding: 20px;
-        }
-        @media (prefers-color-scheme: dark) {
-            html,
-            body {
-                background: black;
-                color: white;
-            }
-        }
     </style>
 </head>
 <body>
+<img src="/favicon.ico">
 <h1>Grrr.li</h1>
-<a href="/calendar/">Calendar</a>
-<a href="/clock/">Clock</a>
-<a href="/emojis/">Emojis</a>
-<a href="/random-word/">Random word</a>
-<a href="/uuid/">UUID</a>
+<a href="/calendar/" class="button">Calendar</a>
+<a href="/clock/" class="button">Clock</a>
+<a href="/emojis/" class="button">Emojis</a>
+<a href="/random-word/" class="button">Random word</a>
+<a href="/uuid/" class="button">UUID</a>
 <br>
 <br>
-<a href="/about/">About</a>
+<a href="/about/" class="button">About</a>
 </body>
 </html>

@@ -5,39 +5,9 @@
 <html lang="en">
 <head>
     <?php renderHeadBase('Emojis'); ?>
-    <style>
-        html,
-        body {
-            background: white;
-            color: black;
-            text-align: center;
-        }
-        body {
-            padding-bottom: 50px;
-        }
-        #emoji-wrapper {
-            font-size: 2em;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        #emoji-wrapper .emoji {
-            margin: 5px;
-        }
-        #emoji-wrapper .emoji:active {
-            opacity: 0.5;
-        }
-        @media (prefers-color-scheme: dark) {
-            html,
-            body {
-                background: black;
-                color: white;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/emojis/emojis.css">
 </head>
 <body>
-    <h1>emojis</h1>
     <p class="emojis">
     <div id="emoji-wrapper"></div>
     <script>
