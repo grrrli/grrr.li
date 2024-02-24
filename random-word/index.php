@@ -19,10 +19,6 @@
         </h1>
     </div>
     <script>
-        function reloadPage() {
-            location.reload();
-        }
-
         document.body.onkeyup = function(e) {
             if (
                 e.key === ' '
@@ -31,7 +27,7 @@
                 ||
                 e.keyCode === 32
             ) {
-                reloadPage();
+                location.reload();
             }
         }
     </script>
