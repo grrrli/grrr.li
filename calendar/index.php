@@ -1,13 +1,42 @@
 <?php
 require_once '../helpers.php';
+
 $year = isset($_GET['year']) ? intval($_GET['year']) : date('Y');
-$months = [1 => 'Januari', 2 => 'Februari', 3 => 'Maart', 4 => 'April', 5 => 'Mei', 6 => 'Juni', 7 => 'Juli', 8 => 'Augustus', 9 => 'September', 10 => 'Oktober', 11 => 'November', 12 => 'December'];
-$daysOfWeek = ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo'];
+$userLanguage = $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? 'en_US';
+$userLanguage = substr($userLanguage, 0, 2);
+
+$months = [];
+for ($month = 1; $month <= 12; $month++) {
+    $formatter = new IntlDateFormatter(
+        $userLanguage,
+        IntlDateFormatter::LONG,
+        IntlDateFormatter::NONE,
+        'UTC',
+        IntlDateFormatter::GREGORIAN,
+        'MMMM'
+    );
+    $timestamp = mktime(0, 0, 0, $month, 1, $year);
+    $months[$month] = ucfirst($formatter->format($timestamp));
+}
+
+$daysOfWeek = [];
+for ($day = 1; $day <= 7; $day++) {
+    $formatter = new IntlDateFormatter(
+        $userLanguage,
+        IntlDateFormatter::LONG,
+        IntlDateFormatter::NONE,
+        'UTC',
+        IntlDateFormatter::GREGORIAN,
+        'E'
+    );
+    $timestamp = mktime(0, 0, 0, 1, $day, $year);
+    $daysOfWeek[] = substr(ucfirst($formatter->format($timestamp)), 0, 2);
+}
 ?>
 
 <?php setHeaders(); ?>
 <!doctype html>
-<html lang="nl">
+<html lang="<?php echo $userLanguage; ?>">
 <head>
     <?php renderHeadBase('Calendar ' . $year); ?>
     <style>
