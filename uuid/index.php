@@ -18,5 +18,18 @@ $uuid = Uuid::uuid4();
         <?php echo $uuid; ?>
     </h1>
 </div>
+<script>
+    document.body.onkeyup = function(e) {
+        if (
+            e.key === ' '
+            ||
+            e.code === 'Space'
+            ||
+            e.keyCode === 32
+        ) {
+            location.reload();
+        }
+    }
+</script>
 </body>
 </html>
