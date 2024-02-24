@@ -27,6 +27,10 @@
         class="button"
 >Emojis</a>
 <a
+        href="/ip/"
+        class="button"
+>IP</a>
+<a
         href="/moon-phase/"
         class="button"
 >Moon phase</a>
