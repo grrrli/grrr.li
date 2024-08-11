@@ -47,6 +47,10 @@
         class="button"
 >Random word</a>
 <a
+        href="/text-stats/"
+        class="button"
+>Text stats</a>
+<a
         href="/uuid/"
         class="button"
 >UUID</a>

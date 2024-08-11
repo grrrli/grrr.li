@@ -14,7 +14,8 @@ body {
 }
 
 a.button,
-input.button {
+input.button,
+textarea.textarea {
     display: inline-block;
     width: 100%;
     max-width: 255px;
@@ -44,7 +45,8 @@ a.button:active {
     transform: translateY(2px);
 }
 
-input.input {
+input.input,
+textarea.textarea {
     width: 100%;
     max-width: 255px;
     padding: 15px;
