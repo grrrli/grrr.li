@@ -9,7 +9,12 @@ body {
     justify-content: center;
 }
 
-a.button {
+.form-container {
+    text-align: center;
+}
+
+a.button,
+input.button {
     display: inline-block;
     width: 100%;
     max-width: 255px;
@@ -37,6 +42,26 @@ a.button:active {
     background-color: white;
     box-shadow: 0 5px #222;
     transform: translateY(2px);
+}
+
+input.input {
+    width: 100%;
+    max-width: 255px;
+    padding: 15px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: 2px solid #222;
+    box-shadow: #222 4px 4px 0 0;
+    outline: none;
+    background-color: #ffffff;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+input.input:focus {
+    box-shadow: #222 4px 4px 0 0;
 }
 
 img.logo {

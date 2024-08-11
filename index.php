@@ -35,6 +35,10 @@
         class="button"
 >Moon phase</a>
 <a
+        href="/random-number/"
+        class="button"
+>Random number</a>
+<a
         href="/random-word/"
         class="button"
 >Random word</a>
