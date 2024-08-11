@@ -42,8 +42,18 @@ for ($day = 1; $day <= 7; $day++) {
 <head>
     <?php renderHeadBase('Calendar ' . $year); ?>
     <link rel="stylesheet" href="/calendar/calendar.css">
+    <script>
+        window.onload = function() {
+            var currentMonth = new Date().getMonth() + 1;
+            var element = document.getElementById('month-' + currentMonth);
+            if (element) {
+                element.scrollIntoView();
+            }
+        };
+    </script>
 </head>
 <body>
+
 <?php
 function buildCalendar($year, $months, $daysOfWeek)
 {
@@ -52,7 +62,7 @@ function buildCalendar($year, $months, $daysOfWeek)
     <div class='calendar-container'><?php
     foreach ($months as $monthNum => $month) {
         ?>
-        <div class='month'><?php
+        <div id="month-<?php echo $monthNum; ?>" class='month'><?php
         $firstDayOfMonth = mktime(0, 0, 0, $monthNum, 1, $year);
         $numberDays = date('t', $firstDayOfMonth);
         $dateComponents = getdate($firstDayOfMonth);
@@ -73,7 +83,7 @@ function buildCalendar($year, $months, $daysOfWeek)
 
                 if ($dayOfWeek > 0) {
                     ?>
-                    <td colspan='<?php echo $dayOfWeek; ?>'>&nbsp;</td><?php
+                <td colspan='<?php echo $dayOfWeek; ?>'>&nbsp;</td><?php
                 }
 
                 $currentDay = 1;
@@ -99,7 +109,7 @@ function buildCalendar($year, $months, $daysOfWeek)
                 if ($dayOfWeek != 7) {
                     $remainingDays = 7 - $dayOfWeek;
                     ?>
-                    <td colspan='<?php echo $remainingDays; ?>'>&nbsp;</td><?php
+                <td colspan='<?php echo $remainingDays; ?>'>&nbsp;</td><?php
                 }
                 ?></tr>
         </table>
