@@ -31,6 +31,10 @@
         class="button"
 >IP</a>
 <a
+        href="/lorem-ipsum/"
+        class="button"
+>Lorem ipsum</a>
+<a
         href="/moon-phase/"
         class="button"
 >Moon phase</a>
