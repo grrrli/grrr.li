@@ -1,6 +1,6 @@
 <?php require_once '../helpers.php';  ?>
 
-<?php setHeaders(); ?>
+<?php setHeaders(false); ?>
 <!doctype html>
 <html lang="en">
 <head>

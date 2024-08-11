@@ -1,16 +1,23 @@
 <?php
 
-function setHeaders(): void
+function setHeaders(bool $cacheContent = true): void
 {
-    $cachingPeriodInDays = 1;
-    $cacheMaxAge = $cachingPeriodInDays * 24 * 60 * 60;
-    $cacheExpirationDate = gmdate('D, d M Y H:i:s', time() + $cacheMaxAge) . ' GMT';
+    if ($cacheContent) {
+        $cachingPeriodInDays = 1;
+        $cacheMaxAge = $cachingPeriodInDays * 24 * 60 * 60;
+        $cacheExpirationDate = gmdate('D, d M Y H:i:s', time() + $cacheMaxAge) . ' GMT';
+        header('Cache-Control: public, max-age=' . $cacheMaxAge);
+        header('Expires: ' . $cacheExpirationDate);
+    } else {
+        header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+        header('Pragma: no-cache');
+        header('Expires: 0');
+    }
+
     header('Access-Control-Allow-Origin: https://grrr.li');
-    header("Cache-Control: public, max-age=$cacheMaxAge");
     header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://grrr.li; style-src 'self'; object-src 'none';");
     header('Content-Type: text/html; charset=UTF-8');
     header('Cross-Origin-Opener-Policy: same-origin');
-    header("Expires: $cacheExpirationDate");
     header("Permissions-Policy: geolocation=(), microphone=(), camera=()");
     header('Referrer-Policy: no-referrer');
     header('Strict-Transport-Security: max-age=31536000; includeSubDomains');

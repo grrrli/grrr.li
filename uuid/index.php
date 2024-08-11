@@ -5,7 +5,7 @@ use Ramsey\Uuid\Uuid;
 $uuid = Uuid::uuid4();
 ?>
 
-<?php setHeaders(); ?>
+<?php setHeaders(false); ?>
 <!doctype html>
 <html lang="en">
 <head>
