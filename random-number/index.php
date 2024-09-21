@@ -13,9 +13,9 @@
         const DEFAULT_MAX = 1000;
         const ABSOLUTE_MIN = -1000000000;
         const ABSOLUTE_MAX = 1000000000;
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $min = intval($_POST['min']);
-            $max = intval($_POST['max']);
+        if (!empty($_GET['min']) && !empty($_GET['max'])) {
+            $min = intval($_GET['min']);
+            $max = intval($_GET['max']);
             if ($min >= $max) {
                 $min = DEFAULT_MIN;
                 $max = DEFAULT_MAX;
@@ -41,7 +41,7 @@
             <?php echo $randomNumber; ?>
         </h1>
         <div class="form-container">
-            <form method="post">
+            <form method="get">
                 <input
                     type="number"
                     id="min"
