@@ -106,7 +106,8 @@ img.logo {
         color: white;
     }
 
-    a.button {
+    a.button,
+    input.button {
         background-color: black;
         color: #fff;
         box-shadow: #fff 4px 4px 0 0;
@@ -114,13 +115,24 @@ img.logo {
     }
 
     a.button:hover,
-    a.button:focus {
+    a.button:focus,
+    input.button:hover,
+    input.button:focus {
         background-color: #555;
     }
 
-    a.button:active {
+    a.button:active,
+    input.button:active {
         background-color: #555;
         box-shadow: 0 5px #fff;
         transform: translateY(2px);
+    }
+
+    input.input,
+    textarea.textarea {
+        background-color: #222;
+        color: #fff;
+        box-shadow: #fff 4px 4px 0 0;
+        border-color: #fff;
     }
 }
