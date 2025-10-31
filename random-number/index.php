@@ -7,7 +7,7 @@
     <?php renderHeadBase('Random number'); ?>
     <link rel="stylesheet" href="/random-number/random-number.css">
 </head>
-<body>
+<body class="tool">
     <?php
         const DEFAULT_MIN = 1;
         const DEFAULT_MAX = 1000;
@@ -36,7 +36,7 @@
         }
         $randomNumber = generateRandomNumber($min, $max);
     ?>
-    <div id="random-number-wrapper">
+    <div class="tool-wrapper">
         <h1 onclick="navigator.clipboard.writeText('<?php echo $randomNumber; ?>');">
             <?php echo $randomNumber; ?>
         </h1>

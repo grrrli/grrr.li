@@ -7,8 +7,8 @@
     <?php renderHeadBase('Clock'); ?>
     <link rel="stylesheet" href="/clock/clock.css">
 </head>
-<body>
-    <div id="clock-wrapper">
+<body class="tool">
+    <div class="tool-wrapper">
         <h1 id="clock"></h1>
     </div>
 

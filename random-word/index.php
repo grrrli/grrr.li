@@ -7,13 +7,13 @@
     <?php renderHeadBase('Random word'); ?>
     <link rel="stylesheet" href="/random-word/random-word.css">
 </head>
-<body>
+<body class="tool">
     <?php
         // thanks https://github.com/openedx/edx-notes-api/blob/master/notesapi/v1/management/commands/data/basic_words.txt
         $words = json_decode(file_get_contents('words.json'));
         $randomWord = $words[array_rand($words)];
     ?>
-    <div id="random-word-wrapper">
+    <div class="tool-wrapper">
         <h1 onclick="navigator.clipboard.writeText('<?php echo $randomWord; ?>');">
             <?php echo $randomWord; ?>
         </h1>

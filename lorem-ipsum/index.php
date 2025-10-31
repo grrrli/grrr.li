@@ -7,7 +7,7 @@
     <?php renderHeadBase('Lorem ipsum'); ?>
     <link rel="stylesheet" href="/lorem-ipsum/lorem-ipsum.css">
 </head>
-<body>
+<body class="tool">
 <?php
 $loremIpsumParagraphs = [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
@@ -38,7 +38,7 @@ $loremIpsumParagraphs = [
 ];
 $randomParagraphs = array_rand($loremIpsumParagraphs, 3);
 ?>
-<div id="lorem-ipsum-wrapper">
+<div class="tool-wrapper" id="lorem-ipsum-wrapper">
     <?php foreach ($randomParagraphs as $paragraph): ?>
         <p onclick="navigator.clipboard.writeText('<?php echo $loremIpsumParagraphs[$paragraph]; ?>');">
             <?php echo $loremIpsumParagraphs[$paragraph]; ?>

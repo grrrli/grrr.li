@@ -36,8 +36,8 @@ $ip = getClientIp();
     <?php renderHeadBase(($ip !== 'Unknown') ? $ip : 'IP'); ?>
     <link rel="stylesheet" href="/ip/ip.css">
 </head>
-<body>
-<div id="ip-wrapper">
+<body class="tool">
+<div class="tool-wrapper">
     <h1 onclick="navigator.clipboard.writeText('<?php echo $ip; ?>');">
         <?php echo $ip; ?>
     </h1>

@@ -7,7 +7,7 @@
     <?php renderHeadBase('Moon phase'); ?>
     <link rel="stylesheet" href="/moon-phase/moon-phase.css">
 </head>
-<body>
+<body class="tool">
     <?php
         function getMoonPhaseName(): string
         {
@@ -65,7 +65,7 @@
             }
         }
     ?>
-    <div id="moon-phase-wrapper">
+    <div class="tool-wrapper">
         <h1>
             <?php echo getMoonPhaseEmoji(); ?>
         </h1>

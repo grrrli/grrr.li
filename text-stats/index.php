@@ -7,8 +7,8 @@
     <?php renderHeadBase('Text stats'); ?>
     <link rel="stylesheet" href="/text-stats/text-stats.css">
 </head>
-<body>
-<div id="text-stats-wrapper">
+<body class="tool">
+<div class="tool-wrapper">
     <div class="form-container">
         <textarea id="text-input" class="textarea" rows="10" cols="50" placeholder="Type something..."></textarea>
         <p id="char-count">Characters: 0</p>

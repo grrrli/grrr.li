@@ -12,8 +12,8 @@ $uuid = Uuid::uuid4();
     <?php renderHeadBase('UUID'); ?>
     <link rel="stylesheet" href="/uuid/uuid.css">
 </head>
-<body>
-<div id="uuid-wrapper">
+<body class="tool">
+<div class="tool-wrapper">
     <h1 onclick="navigator.clipboard.writeText('<?php echo $uuid; ?>');">
         <?php echo $uuid; ?>
     </h1>
