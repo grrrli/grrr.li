@@ -73,7 +73,7 @@
             <?php echo getMoonPhaseName(); ?>
         </h2>
         <div style="margin: 20px 0;">
-            <button class="icon-button" onclick="copyToClipboard('<?php echo getMoonPhaseName(); ?>')" aria-label="Copy">⎘</button>
+            <button class="icon-button" onclick="copyToClipboard('<?php echo getMoonPhaseEmoji(); ?> <?php echo getMoonPhaseName(); ?>')" aria-label="Copy">⎘</button>
         </div>
     </div>
     <script src="/assets/utils.js"></script>

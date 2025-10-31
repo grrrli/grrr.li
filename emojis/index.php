@@ -1882,10 +1882,11 @@
             const elements = document.querySelectorAll('.emoji');
             elements.forEach(element => {
                 element.addEventListener('click', function() {
-                    navigator.clipboard.writeText(this.innerText);
+                    copyToClipboard(this.innerText);
                 });
             });
         });
     </script>
+    <script src="/assets/utils.js"></script>
 </body>
 </html>

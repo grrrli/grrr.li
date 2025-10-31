@@ -40,16 +40,23 @@ $randomParagraphs = array_rand($loremIpsumParagraphs, 3);
 ?>
 <div class="tool-wrapper" id="lorem-ipsum-wrapper">
     <?php foreach ($randomParagraphs as $index => $paragraph): ?>
-        <p style="cursor: pointer; position: relative; padding-right: 50px;" onclick="copyToClipboard('<?php echo addslashes($loremIpsumParagraphs[$paragraph]); ?>');">
+        <p class="lorem-paragraph" style="cursor: pointer; position: relative; padding-right: 50px;" onclick="copyToClipboard(this.innerText);">
             <?php echo $loremIpsumParagraphs[$paragraph]; ?>
         </p>
     <?php endforeach; ?>
     <div style="align-self: center; margin-top: 30px;">
+        <button class="icon-button" onclick="copyAllParagraphs()" aria-label="Copy all">⎘</button>
         <button class="icon-button" onclick="refreshPage()" aria-label="Refresh">↻</button>
     </div>
 </div>
 <script src="/assets/utils.js"></script>
 <script>
+    function copyAllParagraphs() {
+        const paragraphs = document.querySelectorAll('.lorem-paragraph');
+        const allText = Array.from(paragraphs).map(p => p.innerText).join('\n\n');
+        copyToClipboard(allText);
+    }
+
     document.body.onkeyup = function(e) {
         if (e.key === ' ' || e.code === 'Space' || e.keyCode === 32) {
             location.reload();
