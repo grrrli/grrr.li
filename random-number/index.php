@@ -37,7 +37,7 @@
         $randomNumber = generateRandomNumber($min, $max);
     ?>
     <div class="tool-wrapper">
-        <h1><?php echo $randomNumber; ?></h1>
+        <h1 onclick="copyToClipboard('<?php echo $randomNumber; ?>')" style="cursor: pointer;"><?php echo $randomNumber; ?></h1>
         <div style="margin: 20px 0;">
             <button class="icon-button" onclick="copyToClipboard('<?php echo $randomNumber; ?>')" aria-label="Copy">⎘</button>
             <button class="icon-button" onclick="refreshPage()" aria-label="Refresh">↻</button>

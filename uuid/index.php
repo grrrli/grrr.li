@@ -14,7 +14,7 @@ $uuid = Uuid::uuid4();
 </head>
 <body class="tool">
 <div class="tool-wrapper">
-    <h1><?php echo $uuid; ?></h1>
+    <h1 onclick="copyToClipboard('<?php echo $uuid; ?>')" style="cursor: pointer;"><?php echo $uuid; ?></h1>
     <div style="margin: 20px 0;">
         <button class="icon-button" onclick="copyToClipboard('<?php echo $uuid; ?>')" aria-label="Copy">⎘</button>
         <button class="icon-button" onclick="refreshPage()" aria-label="Refresh">↻</button>

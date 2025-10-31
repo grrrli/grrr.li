@@ -9,7 +9,7 @@
 </head>
 <body class="tool">
     <div class="tool-wrapper">
-        <h1 id="clock"></h1>
+        <h1 id="clock" onclick="copyTime()" style="cursor: pointer;"></h1>
         <div style="margin: 20px 0;">
             <button class="icon-button" onclick="copyTime()" aria-label="Copy">⎘</button>
         </div>

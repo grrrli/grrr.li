@@ -66,10 +66,10 @@
         }
     ?>
     <div class="tool-wrapper">
-        <h1>
+        <h1 onclick="copyToClipboard('<?php echo getMoonPhaseEmoji(); ?> <?php echo getMoonPhaseName(); ?>')" style="cursor: pointer;">
             <?php echo getMoonPhaseEmoji(); ?>
         </h1>
-        <h2>
+        <h2 onclick="copyToClipboard('<?php echo getMoonPhaseEmoji(); ?> <?php echo getMoonPhaseName(); ?>')" style="cursor: pointer;">
             <?php echo getMoonPhaseName(); ?>
         </h2>
         <div style="margin: 20px 0;">
