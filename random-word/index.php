@@ -14,19 +14,16 @@
         $randomWord = $words[array_rand($words)];
     ?>
     <div class="tool-wrapper">
-        <h1 onclick="navigator.clipboard.writeText('<?php echo $randomWord; ?>');">
-            <?php echo $randomWord; ?>
-        </h1>
+        <h1><?php echo $randomWord; ?></h1>
+        <div style="margin: 20px 0;">
+            <button class="icon-button" onclick="copyToClipboard('<?php echo $randomWord; ?>')" aria-label="Copy">⎘</button>
+            <button class="icon-button" onclick="refreshPage()" aria-label="Refresh">↻</button>
+        </div>
     </div>
+    <script src="/assets/utils.js"></script>
     <script>
         document.body.onkeyup = function(e) {
-            if (
-                e.key === ' '
-                ||
-                e.code === 'Space'
-                ||
-                e.keyCode === 32
-            ) {
+            if (e.key === ' ' || e.code === 'Space' || e.keyCode === 32) {
                 location.reload();
             }
         }

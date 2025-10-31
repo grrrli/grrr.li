@@ -39,21 +39,19 @@ $loremIpsumParagraphs = [
 $randomParagraphs = array_rand($loremIpsumParagraphs, 3);
 ?>
 <div class="tool-wrapper" id="lorem-ipsum-wrapper">
-    <?php foreach ($randomParagraphs as $paragraph): ?>
-        <p onclick="navigator.clipboard.writeText('<?php echo $loremIpsumParagraphs[$paragraph]; ?>');">
+    <?php foreach ($randomParagraphs as $index => $paragraph): ?>
+        <p style="cursor: pointer; position: relative; padding-right: 50px;" onclick="copyToClipboard('<?php echo addslashes($loremIpsumParagraphs[$paragraph]); ?>');">
             <?php echo $loremIpsumParagraphs[$paragraph]; ?>
         </p>
     <?php endforeach; ?>
+    <div style="align-self: center; margin-top: 30px;">
+        <button class="icon-button" onclick="refreshPage()" aria-label="Refresh">↻</button>
+    </div>
 </div>
+<script src="/assets/utils.js"></script>
 <script>
     document.body.onkeyup = function(e) {
-        if (
-            e.key === ' '
-            ||
-            e.code === 'Space'
-            ||
-            e.keyCode === 32
-        ) {
+        if (e.key === ' ' || e.code === 'Space' || e.keyCode === 32) {
             location.reload();
         }
     }

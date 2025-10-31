@@ -37,9 +37,11 @@
         $randomNumber = generateRandomNumber($min, $max);
     ?>
     <div class="tool-wrapper">
-        <h1 onclick="navigator.clipboard.writeText('<?php echo $randomNumber; ?>');">
-            <?php echo $randomNumber; ?>
-        </h1>
+        <h1><?php echo $randomNumber; ?></h1>
+        <div style="margin: 20px 0;">
+            <button class="icon-button" onclick="copyToClipboard('<?php echo $randomNumber; ?>')" aria-label="Copy">⎘</button>
+            <button class="icon-button" onclick="refreshPage()" aria-label="Refresh">↻</button>
+        </div>
         <div class="form-container">
             <form method="get">
                 <input
@@ -66,15 +68,10 @@
             </form>
         </div>
     </div>
+    <script src="/assets/utils.js"></script>
     <script>
         document.body.onkeyup = function(e) {
-            if (
-                e.key === ' '
-                ||
-                e.code === 'Space'
-                ||
-                e.keyCode === 32
-            ) {
+            if (e.key === ' ' || e.code === 'Space' || e.keyCode === 32) {
                 location.reload();
             }
         }

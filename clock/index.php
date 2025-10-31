@@ -10,8 +10,12 @@
 <body class="tool">
     <div class="tool-wrapper">
         <h1 id="clock"></h1>
+        <div style="margin: 20px 0;">
+            <button class="icon-button" onclick="copyTime()" aria-label="Copy">⎘</button>
+        </div>
     </div>
 
+    <script src="/assets/utils.js"></script>
     <?php
     if (!empty($_GET['format'])) {
         ?><script type="text/javascript" src="moment.js"></script><?php
@@ -54,6 +58,11 @@
                 const now = new Date();
                 return now.toLocaleTimeString();
             }
+        }
+
+        function copyTime() {
+            const time = document.getElementById('clock').innerText;
+            copyToClipboard(time);
         }
     </script>
 </body>

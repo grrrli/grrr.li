@@ -38,9 +38,11 @@ $ip = getClientIp();
 </head>
 <body class="tool">
 <div class="tool-wrapper">
-    <h1 onclick="navigator.clipboard.writeText('<?php echo $ip; ?>');">
-        <?php echo $ip; ?>
-    </h1>
+    <h1><?php echo $ip; ?></h1>
+    <div style="margin: 20px 0;">
+        <button class="icon-button" onclick="copyToClipboard('<?php echo $ip; ?>')" aria-label="Copy">⎘</button>
+    </div>
 </div>
+<script src="/assets/utils.js"></script>
 </body>
 </html>

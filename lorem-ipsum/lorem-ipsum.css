@@ -3,7 +3,12 @@ p:active {
 }
 
 #lorem-ipsum-wrapper {
-    align-items: start;
+    align-items: center;
+}
+
+#lorem-ipsum-wrapper p {
+    align-self: start;
+    width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
