@@ -2,8 +2,8 @@
 
 echo "Downloading official Unicode emoji list...\n";
 
-// Download emoji data from unicode-emoji-json (official Unicode data)
-$url = 'https://unpkg.com/unicode-emoji-json/data-ordered-emoji.json';
+// Download emoji data from unicode-emoji-json (official Unicode data with names)
+$url = 'https://unpkg.com/unicode-emoji-json/data-by-emoji.json';
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
@@ -30,15 +30,21 @@ if (!$jsonData) {
 }
 
 // Check if it's an array or object and extract emojis accordingly
+$emojiData = [];
 if (array_keys($jsonData) === range(0, count($jsonData) - 1)) {
     // It's a numeric array, use values directly
-    $emojis = $jsonData;
+    foreach ($jsonData as $emoji) {
+        $emojiData[] = ['emoji' => $emoji, 'name' => ''];
+    }
 } else {
-    // It's an associative array/object, use keys (the emoji characters)
-    $emojis = array_keys($jsonData);
+    // It's an associative array/object, use keys (emoji) and values (data including name)
+    foreach ($jsonData as $emoji => $data) {
+        $name = isset($data['name']) ? $data['name'] : '';
+        $emojiData[] = ['emoji' => $emoji, 'name' => $name];
+    }
 }
 
-echo "Found " . count($emojis) . " emojis\n";
+echo "Found " . count($emojiData) . " emojis\n";
 
 // Update index.php
 echo "Updating index.php...\n";
@@ -46,10 +52,12 @@ echo "Updating index.php...\n";
 $phpFile = __DIR__ . '/emojis/index.php';
 $content = file_get_contents($phpFile);
 
-// Create emoji array string
+// Create emoji array string with emoji and name
 $emojiArray = '';
-foreach ($emojis as $emoji) {
-    $emojiArray .= "                '$emoji',\n";
+foreach ($emojiData as $data) {
+    $emoji = $data['emoji'];
+    $name = addslashes($data['name']);
+    $emojiArray .= "                {emoji: '$emoji', name: '$name'},\n";
 }
 $emojiArray = rtrim($emojiArray, ",\n"); // Remove last comma
 
@@ -61,6 +69,6 @@ $content = preg_replace($pattern, $replacement, $content);
 file_put_contents($phpFile, $content);
 
 echo "Done! ✓\n";
-echo "Total emojis: " . count($emojis) . "\n";
+echo "Total emojis: " . count($emojiData) . "\n";
 
 ?>

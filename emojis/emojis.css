@@ -3,6 +3,15 @@ body {
     text-align: center;
 }
 
+.search-container {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #emoji-wrapper {
     padding-right: 50px;
     padding-left: 50px;
